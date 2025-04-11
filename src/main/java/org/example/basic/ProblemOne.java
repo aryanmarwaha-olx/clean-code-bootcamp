@@ -4,9 +4,9 @@ import java.time.LocalDate;
 
 public class ProblemOne {
 
-    private LocalDate expirationDate;
-    private Boolean approvedForConsumption;
-    private Integer inspectorId;
+    private final LocalDate expirationDate;
+    private final Boolean approvedForConsumption;
+    private final Integer inspectorId;
 
     public ProblemOne(LocalDate expirationDate, Boolean approvedForConsumption, Integer inspectorId) {
         this.expirationDate = expirationDate;
@@ -14,17 +14,7 @@ public class ProblemOne {
         this.inspectorId = inspectorId;
     }
 
-    public boolean isEdible()
-    {
-        if (this.expirationDate.isAfter(LocalDate.now()) &&
-                this.approvedForConsumption == true &&
-                this.inspectorId != null)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+    public boolean isEdible() {
+        return (this.expirationDate.isAfter(LocalDate.now()) && this.approvedForConsumption && this.inspectorId != null);
     }
 }
