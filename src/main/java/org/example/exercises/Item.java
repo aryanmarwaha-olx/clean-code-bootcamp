@@ -3,9 +3,7 @@ package org.example.exercises;
 public class Item {
 
 	public String name;
-
 	public int sellIn;
-
 	public int quality;
 
 	public Item(String name, int sellIn, int quality) {
@@ -16,7 +14,7 @@ public class Item {
 
 	@Override
 	public String toString() {
-		return "\n name=" + name + ", " + sellIn + ", " + quality + "\n" ;
+		return String.format("\n name=%s, sellIn=%d, quality=%d", name, this.sellIn, this.quality) ;
 	}
 	
 	
